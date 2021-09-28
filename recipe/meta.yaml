@@ -1,6 +1,6 @@
 {% set name = "sncosmo" %}
-{% set version = "2.5.0" %}
-{% set sha256 = "5b2fa9f42e10b1347405585bd54552aef83a6dcccccade7fb8e6ef65732cf351" %}
+{% set version = "2.6.0" %}
+{% set sha256 = "c05943def23e71cfe8fddf9dbc91f44fb3956893aef1b18833c6660f101170cb" %}
 
 package:
   name: {{ name|lower }}
@@ -26,14 +26,15 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
     - numpy
     - cython
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - scipy
-    - astropy
-    - extinction
+    - scipy >=0.19.0
+    - astropy >=1.3.0
+    - extinction >=0.4.2
 
 test:
   imports:
