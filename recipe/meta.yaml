@@ -1,6 +1,6 @@
 {% set name = "sncosmo" %}
-{% set version = "2.9.0" %}
-{% set sha256 = "b995c02a42f9354751fecf9218878c2a3490597e39be65535a334629d4dfe2c3" %}
+{% set version = "2.10.0" %}
+{% set sha256 = "2cadbaaf8a5899fc4a76ad48c358e4d68ff70e911b9a60bc3877671bf7048544" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
