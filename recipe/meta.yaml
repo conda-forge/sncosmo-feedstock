@@ -1,6 +1,6 @@
 {% set name = "sncosmo" %}
-{% set version = "2.10.2" %}
-{% set sha256 = "7a2c5c2e85783d73531b01a9a2773ee49dbd8c1a1197518ac5ded30651c42178" %}
+{% set version = "2.11.1" %}
+{% set sha256 = "a98397f16af337387e94bdb9d201affd22c46a480a1c3a7dbdfd0bc1d5ceb05a" %}
 
 package:
   name: {{ name|lower }}
@@ -22,6 +22,7 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
