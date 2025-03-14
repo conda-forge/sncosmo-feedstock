@@ -1,5 +1,5 @@
 {% set name = "sncosmo" %}
-{% set version = "2.12.0" %}
+{% set version = "2.12.1" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0320170c84cf281063aae9364d89dd2436b7e0f81f2dd28e6f0f2284f07dbe58
+  sha256: c512582fe8cbc444a01ed51fc5b50d044678404ea198f681d2ef9eb168ce79cb
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
