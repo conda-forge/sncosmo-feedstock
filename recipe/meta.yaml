@@ -11,7 +11,7 @@ source:
   sha256: c512582fe8cbc444a01ed51fc5b50d044678404ea198f681d2ef9eb168ce79cb
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -19,18 +19,18 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
+    - numpy >=2                              # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
   host:
     - python
     - pip
     - setuptools
-    - numpy
+    - numpy >=2
     - cython
   run:
     - python
-    - {{ pin_compatible('numpy') }}
+    - {{ pin_compatible('numpy', lower_bound='2') }}
     - astropy-base >=5.0
     - extinction >=0.4.6
     - h5py >=3.11
