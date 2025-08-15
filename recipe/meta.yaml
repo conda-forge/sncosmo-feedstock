@@ -1,6 +1,8 @@
 {% set name = "sncosmo" %}
 {% set version = "2.12.1" %}
-
+{% set python_min = python_min | default("3.10") %}
+{% set min_py = python_min | replace('.', '') | int %}
+{% set py = py | default(min_py) %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +13,10 @@ source:
   sha256: c512582fe8cbc444a01ed51fc5b50d044678404ea198f681d2ef9eb168ce79cb
 
 build:
-  number: 0
+  number: 1
+  {% if py < min_py %}
+  skip: true
+  {% endif %}
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
