@@ -1,5 +1,5 @@
 {% set name = "sncosmo" %}
-{% set version = "2.12.1" %}
+{% set version = "2.13.0" %}
 {% set python_min = python_min | default("3.10") %}
 {% set min_py = python_min | replace('.', '') | int %}
 {% set py = py | default(min_py) %}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c512582fe8cbc444a01ed51fc5b50d044678404ea198f681d2ef9eb168ce79cb
+  sha256: 72158024fbab4091ea7433c7d808546efd3ac40e6152f9bcba0a3e9604cb2da4
 
 build:
-  number: 1
+  number: 0
   {% if py < min_py %}
   skip: true
   {% endif %}
