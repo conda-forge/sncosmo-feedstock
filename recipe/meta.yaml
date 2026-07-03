@@ -1,8 +1,5 @@
 {% set name = "sncosmo" %}
 {% set version = "2.13.0" %}
-{% set python_min = python_min | default("3.10") %}
-{% set min_py = python_min | replace('.', '') | int %}
-{% set py = py | default(min_py) %}
 
 package:
   name: {{ name|lower }}
@@ -14,9 +11,7 @@ source:
 
 build:
   number: 0
-  {% if py < min_py %}
-  skip: true
-  {% endif %}
+  skip: true  # [py<311]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -35,7 +30,6 @@ requirements:
     - cython
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - astropy-base >=5.0
     - extinction >=0.4.6
     - h5py >=3.11
