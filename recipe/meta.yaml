@@ -1,5 +1,5 @@
 {% set name = "sncosmo" %}
-{% set version = "2.13.1" %}
+{% set version = "2.13.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 156cdc768bd39e29de01fb5ef0e131b78d309ab509eb32f0472cdf1422d397a0
+  sha256: 874c5f31e791dca09a5d69b3a81c113f8f0ed618d2d09863758b86dda8fdcc0e
 
 build:
   number: 0
